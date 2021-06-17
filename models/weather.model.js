@@ -2,7 +2,7 @@
 class Forecast {
     constructor(weatherData) {
       this.description = weatherData.weather.description;
-      this.date = weatherData.date;
+      this.date = weatherData.datetime;
     }
   }
 // to make it to other 

@@ -10,8 +10,8 @@ const weatherController = (req, res) => {
   
     if (lat && lon){
     
-      const weatherBitUrl = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${WEATHER_BIT_KEY}&include=minutely`
-      
+      const weatherBitUrl = `http://api.weatherbit.io/v2.0/forecast/daily?key=${WEATHER_BIT_KEY}&lat=${lat}&lon=${lon}`;
+      console.log(weatherBitUrl);
       axios.get(weatherBitUrl).then(response => {
         const resData = response.data.data.map((obj) => new foreCast(obj));
         res.json(resData)
